@@ -1,33 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+
 import './App.css'
+import { useEffect, useState } from 'react';
+
+import { PlacePage } from './components/PlacePage/PlacePage';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [data, setData] = useState();
+  const [currentPlaceId, setCurrentPlaceId] = useState();
+
+  useEffect(() => {
+    fetchData();
+  }, [])
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('https://konkursas.kitm.lt/backend/1434355/api/v1/places', {
+        method: 'GET'
+      });
+
+      const resp = await response.json();
+
+      setData(resp.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React for competition WEB dev challenge 2025</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <MapContainer center={[54.6525, 24.9342]} zoom={13} scrollWheelZoom={false} style={{ height: "50vh", width: "100%" }} >
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        {data && data.map((item, index) => (
+          <Marker key={index} position={[item.latitude, item.longitude]}>
+            <Popup>
+              <div className='popup-div'>
+                <p>{item.name}</p>
+                <p>Lokacija: {item.address}</p>
+                <p>Reitingas: {item.rating} / 5</p>
+                <button onClick={() => setCurrentPlaceId(item._id)} className='popup-button'>
+                  Peržiūrėti vietovę
+                </button>
+              </div>
+            </Popup>
+          </Marker>
+        ))}
+      </MapContainer>
+
+      {currentPlaceId ? <PlacePage id={currentPlaceId} /> : ''}
     </>
   )
 }

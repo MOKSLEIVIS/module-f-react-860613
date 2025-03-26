@@ -1,0 +1,208 @@
+.place-page-div {
+    display: flex;
+    padding: 5px;
+    margin: 0;
+    flex-direction: column;
+    gap: 2px;
+    border: solid 1px rgb(204, 204, 204);
+    border-radius: 5px;
+}
+
+.place-page-title-div {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    text-align: center;
+}
+
+.place-page-title-div h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.place-page-location-div {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+
+.place-page-location-div img {
+    padding: 0;
+    margin: 0;
+    width: 38px;
+    height: 38px;
+}
+
+.place-page-location-div p {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+
+.place-page-rating-div {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+
+.place-page-rating-div img {
+    padding: 0;
+    margin: 0;
+    width: 38px;
+    height: 38px;
+}
+
+.place-page-rating-div p {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+
+.place-page-reviews-div {
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.leave-review-div {
+    display: flex;
+    padding: 0;
+    margin: 2px 0 2px 0;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.leave-review-div h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.review-post-div {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.review-post-div input {
+    padding: 5px;
+    margin: 0;
+    font-size: 18px;
+    border: solid 1px rgb(204, 204, 204);
+    border-radius: 5px;
+}
+
+.review-post-div button {
+    padding: 2px 5px 2px 5px;
+    margin: 0;
+    font-size: 18px;
+    background-color: rgb(41, 114, 182);
+    color: rgb(255, 255, 255);
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.rating-post-div {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+}
+
+.rating-post-div h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: lighter;
+    color: rgb(15, 15, 15);
+}
+
+.rating-post-div input {
+    padding: 3px;
+    margin: 0;
+    width: 50px;
+    font-size: 18px;
+    border: solid 1px rgb(204, 204, 204);
+    border-radius: 5px;
+}
+
+.error-div {
+    display: flex;
+    padding: 4px;
+    margin: 0;
+    background-color: rgb(209, 58, 58);
+    border-radius: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.error-div p {
+    padding: 0;
+    margin: 0;
+    color: rgb(255, 255, 255);
+}
+
+.error-div img {
+    padding: 0;
+    margin: 0;
+    filter: invert(100%);
+    transform: rotateZ(45deg);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.user-div {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.user-div img {
+    padding: 2px;
+    margin: 0;
+    width: 48px;
+    height: 48px;
+    background-color: rgb(204, 204, 204);
+    border-radius: 50%;
+}
+
+.user-div p {
+    padding: 0;
+    margin: 0;
+    font-size: 19px;
+}
+
+.user-comment-div {
+    padding: 5px;
+    margin: 0;
+    background-color: rgb(245, 245, 245);
+    border-radius: 4px;
+}
+
+.user-comment-div p {
+    padding: 0;
+    margin: 0;
+}
+
+.user-rating-div {
+    padding: 0;
+    margin: 0;
+}
+
+.user-comment-div p {
+    padding: 0;
+    margin: 0;
+}
